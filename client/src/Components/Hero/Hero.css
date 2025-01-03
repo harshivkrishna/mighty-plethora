@@ -169,4 +169,8 @@ button:disabled{
         bottom: -110px;
         right: 20px;
     }
+
+    .social-links{
+      right: 5px;
+    }
 }
