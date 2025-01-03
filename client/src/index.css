@@ -63,3 +63,39 @@
       height: 12px;
     }  
   }
+
+
+.text-container,.text-invert-container{
+    width: 50%;
+    padding: 20px 15px;
+}
+
+.text-container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border: 3px solid #ebb85e;
+    width: 17px;
+    border-right-width: 0;
+  }
+
+  .text-invert-container::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid #ebb85e;
+    width: 17px;
+    border-left-width: 0;
+  
+  }
+
+  .sub-title{
+    color: #575757;
+    font-size: 18px;
+    font-weight: bold;
+  }
+

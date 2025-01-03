@@ -1,0 +1,35 @@
+.service-div{
+    border-top: 2px solid rgba(255, 255, 255, 0.711);
+    padding: 20px 0;
+}
+
+.group{
+    border: 1px solid white;
+}
+.services-container{
+    height: 100vh;
+}
+
+.text-invert-container{
+    width: 100%;
+    align-self: flex-end;
+}
+
+.service-text{
+    color: aliceblue;
+}
+
+@media (max-width:800px){
+    .services-container{
+        height: fit-content;
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+}
+
+@media (max-width:500px){
+    .service-image-grid{
+        grid-template-columns: auto;
+        gap: 20px;
+    }
+}
