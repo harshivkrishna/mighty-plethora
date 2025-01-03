@@ -131,7 +131,7 @@ const About = () => {
             <SwiperSlide>
               <div className="text-center flex flex-col justify-center">
                 <img
-                  src="https://via.placeholder.com/150"
+                  src="/assets/profile1.jpeg"
                   alt="Clifford Rock"
                   className="mx-auto rounded-full mb-4"
                 />
@@ -142,7 +142,7 @@ const About = () => {
             <SwiperSlide>
               <div className="text-center">
                 <img
-                  src="https://via.placeholder.com/150"
+                  src="/assets/profile2.jpeg"
                   alt="Marketa Laznova"
                   className="mx-auto rounded-full mb-4"
                 />
@@ -153,7 +153,7 @@ const About = () => {
             <SwiperSlide className="z-20">
               <div className="text-center">
                 <img
-                  src="https://via.placeholder.com/150"
+                  src="/assets/profile3.jpeg"
                   alt="Elisa Rashford"
                   className="mx-auto rounded-full mb-4"
                 />

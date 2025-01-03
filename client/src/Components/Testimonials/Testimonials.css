@@ -1,0 +1,19 @@
+.swiper-slide{
+    overflow: visible !important;
+}
+
+.swiper-button-next,.swiper-button-prev{
+    color: #ebb85e;
+}
+
+@media (max-width:1100px) {
+    .slide-container{
+        width: 80%;
+    }
+    .swiper-button-next,
+.swiper-button-prev {
+    font-size: 1px !important;
+    width: 20px !important;
+    opacity: 0.7 !important;
+}
+}
