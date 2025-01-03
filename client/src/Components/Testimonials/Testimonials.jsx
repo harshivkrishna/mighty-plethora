@@ -70,7 +70,7 @@ const Testimonials = () => {
                             <span className="text-3xl text-custom-gold absolute -top-4 -left-4"><i className='bx bx-plus' ></i></span>
                             <span className="text-3xl text-custom-gold absolute -right-4 -top-4"><i className='bx bx-plus' ></i></span>
 
-                            <span className="text-3xl absolute text-custom-gold -bottom-4 -left-4 transform"><i className='bx bx-plus' ></i></span>
+                            <span className="text-3xl absolute text-custom-gold -bottom-4 -left-4 "><i className='bx bx-plus' ></i></span>
 
                             <span className=" text-3xl absolute -bottom-4 text-custom-gold -right-4 "><i className='bx bx-plus' ></i></span>
 
