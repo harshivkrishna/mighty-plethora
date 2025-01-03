@@ -1,0 +1,172 @@
+/* Global Settings */
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+
+button:disabled{
+    color: #374151;
+}
+
+/* Progress Bar and Counter */
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+
+/* Text */
+.text-lg {
+  font-size: 1.125rem;
+}
+.font-medium {
+  font-weight: 500;
+}
+
+.text-container{
+    width: 50%;
+    padding: 20px 15px;
+}
+
+.text-container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border: 3px solid #ebb85e;
+    width: 17px;
+    border-right-width: 0;
+  }
+
+  .sub-title{
+    color: #575757;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+/* Navigation Arrows */
+.prev-arrow,
+.next-arrow {
+  background: transparent;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.prev-arrow:hover,
+.next-arrow:hover {
+  background-color: #ebb85e;
+  color: black;
+}
+
+/* Progress Bar */
+.h-1 {
+  height: 1.5px;
+}
+.bg-gray-700 {
+  background-color: #374151; /* Tailwind gray-700 */
+}
+.bg-yellow-400 {
+  background-color: #f59e0b; /* Tailwind yellow-400 */
+}
+
+
+.load-bar{
+    background-color: #ebb85e;
+}
+
+/* View Project Button */
+.view-project-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  outline: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ebb85e;
+  color: white;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: absolute;
+  right: 60px;
+  bottom: 50px;
+}
+
+.view-project-btn:hover {
+  color: #ebb85e; 
+}
+
+
+.social-links{
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    position: absolute;
+    right: 20px;
+    top: 25%;
+    writing-mode: vertical-lr;
+    z-index: 10;
+    display: flex;
+    rotate: -180deg;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #374151;
+}
+
+.social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.social-links span{
+    color: #ebb85e;
+}
+
+.social-links i{
+    color: #374151;
+    rotate: -270deg;
+    font-size: 12px;
+}
+
+@media (max-width:1200px){
+    .control-container{
+        width: 50%;
+    }
+}
+
+@media (max-width:600px){
+    .slide-number,.progress{
+        display: none;
+    }
+
+    .text-5xl{
+        font-size: 2.5rem;
+    }
+
+    .text-wrap-container{
+        justify-content: flex-end;
+        margin-bottom: 20vh;
+    }
+    .view-project-btn{
+        bottom: -110px;
+        right: 20px;
+    }
+}

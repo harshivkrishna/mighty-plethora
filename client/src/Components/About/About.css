@@ -1,0 +1,45 @@
+.heading-container{
+    align-self: flex-start;
+    margin-left: 40px;
+}
+
+.team-container .swiper-button-prev,
+.team-container .swiper-button-next {
+  color: #ebb85e;
+  font-size: 24px; 
+}
+
+.skills-line{
+    background-color: #ebb85e;
+}
+
+
+.skills-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width:900px){
+    .image-container{
+        display: none;
+    }
+    .content-container{
+        width: 90%;
+        justify-items: center;
+    }
+    .content-wrap-container{
+        justify-content: center;
+    }
+    .team-container{
+        width: 100%;
+    }
+}
+
+@media (max-width:400px){
+    .about-title-container{
+        grid-template-columns: auto;
+    }
+    .about-title-container div:nth-child(even){
+        transform: translateX(50px);
+    }
+}

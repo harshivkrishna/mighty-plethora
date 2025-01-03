@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;     
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar {
+    width: 12px; 
+    height: 12px;
+  }
+  
+  /* Style the scrollbar track */
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+  
+  /* Style the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background: #ebb85e;
+    border-radius: 10px;
+    border: 2px solid #ebb85e; 
+  }
+
+  body, html {
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .section {
+    position: fixed; /* Fixes the sections */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    z-index: 1;
+    transition: transform 0.5s ease;
+    transform: translateY(100%); /* Initially pushed down */
+  }
+  
+  /* Show sections as you scroll */
+  .section:nth-child(1) {
+    transform: translateY(0);
+  }
+  .section:nth-child(2) {
+    top: 0;
+  }
+  .section:nth-child(3) {
+    top: 0;
+  }
+  
