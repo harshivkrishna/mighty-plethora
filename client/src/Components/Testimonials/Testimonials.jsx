@@ -67,12 +67,12 @@ const Testimonials = () => {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="relative slide-container  w-1/2 p-8 shadow-lg flex flex-col justify-center items-center  border-2 border-gray-700"
                         >
-                            <span className="text-3xl text-custom-gold absolute -top-1 -left-0 transform -translate-x-1/2 -translate-y-1/2">+</span>
-                            <span className="text-3xl text-custom-gold absolute right-0 -top-1 transform translate-x-1/2 -translate-y-1/2">+</span>
+                            <span className="text-3xl text-custom-gold absolute -top-0 -left-0 transform -translate-x-1/2 -translate-y-1/2"><i className='bx bx-plus' ></i></span>
+                            <span className="text-3xl text-custom-gold absolute right-0 -top-0 transform translate-x-1/2 -translate-y-1/2"><i className='bx bx-plus' ></i></span>
 
-                            <span className="text-3xl absolute text-custom-gold -bottom-8 left-0 transform -translate-x-1/2 -translate-y-1/2 ">+</span>
+                            <span className="text-3xl absolute text-custom-gold -bottom-8 left-0 transform -translate-x-1/2 -translate-y-1/2 "><i className='bx bx-plus' ></i></span>
 
-                            <span className="text-3xl absolute -bottom-8 text-custom-gold right-0 translate-x-1/2 -translate-y-1/2">+</span>
+                            <span className="text-3xl absolute -bottom-8 text-custom-gold right-0 translate-x-1/2 -translate-y-1/2"><i className='bx bx-plus' ></i></span>
 
                             <div className="w-24 h-24 mb-6 rounded-full border-white border-2  overflow-hidden">
                                 <img
