@@ -10,27 +10,36 @@ const Navbar = () => {
     setIsMobile(!isMobile);
   };
 
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY;
-    console.log("Scroll Position:", scrollPosition);
+  const handleScroll = (e) => {
+    console.log("Scroll Event Triggered");
+    console.log("Scroll Position:", e.target.scrollTop);
+    const scrollPosition = e.target.scrollTop;
+  
     if (scrollPosition > 100) {
-      setBgColor("white");
+      setBgColor("black");
     } else {
       setBgColor("transparent");
     }
   };
+  
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    const homePageElement = document.querySelector(".home-page");
+
+    if (homePageElement) {
+      homePageElement.addEventListener("scroll", handleScroll);
+    }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (homePageElement) {
+        homePageElement.removeEventListener("scroll", handleScroll);
+      }
     };
   }, []);
 
   return (
     <motion.nav
-      className={`navbar flex justify-between items-center p-5`}
+      className={`navbar flex justify-between items-center p-5 absolute top-0 left-0`}
       style={{ backgroundColor: bgColor, transition: "background-color 0.3s ease" }}
     >
       <motion.div
