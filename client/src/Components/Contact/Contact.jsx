@@ -103,7 +103,7 @@ const Contact = () => {
                 <i className="bx bx-phone text-2xl mr-3"></i>
                 <div>
                   <h4 className="font-semibold  text-custom-gold">Call:</h4>
-                  <p>+91 78453 75177</p>
+                  <p>+91 78113 33177</p>
                 </div>
               </div>
             </div>

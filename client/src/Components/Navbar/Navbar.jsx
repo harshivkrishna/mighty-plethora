@@ -87,9 +87,9 @@ const Navbar = () => {
         >
           <li><a href="/" className="text-lg">Home</a></li>
           <li><a href="/about" className="text-lg">About</a></li>
-          <li><a href="/menu" className="text-lg">Menu</a></li>
           <li><a href="#gallery" className="text-lg">Gallery</a></li>
           <li><a href="/contact" className="text-lg">Contact</a></li>
+          <li><a href="/careers" className="text-lg">Careers</a></li>
         </motion.ul>
       )}
     </motion.nav>
