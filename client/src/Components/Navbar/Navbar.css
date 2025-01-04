@@ -8,9 +8,7 @@
     z-index: 9999 !important;
     transition: transform 0.3s ease-in-out;
     position: absolute !important;
-    top: 0;
-    overflow-x: hidden;
-    
+    top: 0;    
     /* background-color: rgba(0,0,0,0.3) !important; */
   }
   
@@ -28,6 +26,7 @@
     height: 100vh !important;
     width: 100%;
     background-color: black;
+    z-index: 9999;
   }
   .navbar.hidden {
     transform: translateY(-100%);
