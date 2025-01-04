@@ -1,0 +1,23 @@
+.gallery .gallery-item {
+    overflow: hidden;
+    border-right: 3px solid #454035;
+    border-bottom: 3px solid #454035;
+  }
+  .gallery{
+    z-index: -10 !important;
+    position: relative;
+    border: 0 !important;
+  }
+  
+  .gallery .gallery-item img {
+    transition: all ease-in-out 0.4s;
+    border: none !important;
+  }
+  
+  .gallery .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+
+  .gallery-group{
+    border: none !important;
+  }

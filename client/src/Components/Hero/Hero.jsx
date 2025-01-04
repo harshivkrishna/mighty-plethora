@@ -85,7 +85,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full h-screen bg-black text-white">
+    <section className="hero-section relative w-full h-screen bg-black text-white">
         <div className="social-links">
             <a href="">
             <i className='bx bxl-facebook'></i>

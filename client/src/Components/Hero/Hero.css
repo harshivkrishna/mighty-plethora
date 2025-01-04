@@ -111,7 +111,7 @@ button:disabled{
 }
 
 
-.social-links{
+.hero-section .social-links{
     font-size: 12px;
     letter-spacing: 1px;
     font-weight: 500;
@@ -128,7 +128,7 @@ button:disabled{
     color: #374151;
 }
 
-.social-links a{
+.hero-section .social-links a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,11 +136,11 @@ button:disabled{
     font-size: 12px;
 }
 
-.social-links span{
+.hero-section .social-links span{
     color: #ebb85e;
 }
 
-.social-links i{
+.hero-section .social-links i{
     color: #374151;
     rotate: -270deg;
     font-size: 12px;
@@ -170,7 +170,7 @@ button:disabled{
         right: 20px;
     }
 
-    .social-links{
+    .hero-section .social-links{
       right: 5px;
     }
 }
