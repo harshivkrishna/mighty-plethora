@@ -17,6 +17,7 @@
     100% {
       height: 45%;
       top: 0;
+      
     }
   }
   
@@ -52,4 +53,10 @@
   
   .active-loader *{
     overflow-y:hidden !important;
+  }
+
+  @media (max-width:600px) {
+    .loader-text{
+      font-size: 15px !important;
+    }
   }

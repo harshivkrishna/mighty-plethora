@@ -22,7 +22,7 @@ const Loader = () => {
       <div className="relative w-full h-full flex items-center justify-center">
         {/* Bottom Line */}
         <div
-          className={`absolute left-1/2 bottom-0 transform -translate-x-1/2 w-[2px] bg-custom-gold ${
+          className={`bottom-line absolute left-1/2 bottom-0 transform -translate-x-1/2 w-[2px] bg-custom-gold ${
             stage >= 1 ? "custom-height" : "animate-growBottom"
           }`}
         ></div>
@@ -30,7 +30,7 @@ const Loader = () => {
         {/* Logo */}
         {stage >= 1 && (
           <div
-            className={`absolute text-white text-2xl tracking-widest font-light ${
+            className={`absolute text-white text-2xl loader-text tracking-widest font-light ${
               stage === 1 ? "animate-zoomOut":"size"
             }`}
           >
@@ -40,7 +40,7 @@ const Loader = () => {
 
         {/* Top Line */}
         {stage === 2 && (
-          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 w-[2px] bg-custom-gold animate-growTop"></div>
+          <div className="top-line absolute left-1/2 top-1/2 transform -translate-x-1/2 w-[2px] bg-custom-gold animate-growTop"></div>
         )}
       </div>
     </div>
