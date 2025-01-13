@@ -3,18 +3,19 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
 const dotenv = require('dotenv');
-const imageRoutes = require('./routes/imageRoutes'); // Import the image routes
+const serverless = require('serverless-http'); // Required for serverless
+
+const imageRoutes = require('../routes/imageRoutes'); // Adjust path for routes
 
 dotenv.config();
 
 // Initialize express app
 const app = express();
-const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, 'public/uploads'))); // Serve uploaded images from the public/uploads folder
+app.use('/uploads', express.static(path.join(__dirname, '../public/uploads')));
 
 // MongoDB connection
 mongoose
@@ -35,7 +36,7 @@ const jobSchema = new mongoose.Schema({
 const Job = mongoose.model('Job', jobSchema);
 
 // Routes
-app.use('/api/images', imageRoutes); // Use image routes for image upload
+app.use('/api/images', imageRoutes);
 
 // Fetch available jobs
 app.get('/api/jobs', async (req, res) => {
@@ -92,7 +93,5 @@ app.delete('/api/jobs/:id', async (req, res) => {
   }
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+// Export serverless handler
+module.exports = serverless(app);

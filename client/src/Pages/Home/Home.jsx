@@ -18,10 +18,10 @@ const Home = () => {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/images/latest');
+        const res = await fetch('https://mighty-plethora-api.vercel.app/api/images/latest');
         const data = await res.json();
         if (data.imagePath) {
-          setImage(`http://localhost:5000${data.imagePath}`);
+          setImage(`https://mighty-plethora-api.vercel.app/${data.imagePath}`);
         }
       } catch (error) {
         console.error('Error fetching image:', error);
