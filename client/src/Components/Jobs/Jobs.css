@@ -1,0 +1,90 @@
+.admin-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .job-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .job-form input,
+  .job-form textarea,
+  .job-form button {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .job-form textarea {
+    resize: none;
+  }
+  
+  .job-form button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .job-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .cancel-button {
+    background-color: #f44336;
+  }
+  
+  .cancel-button:hover {
+    background-color: #c32e26;
+  }
+  
+  .job-list {
+    margin-top: 20px;
+  }
+  
+  .job-card {
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .job-card h4 {
+    margin: 0 0 10px 0;
+  }
+  
+  .job-card p {
+    margin: 0 0 5px 0;
+  }
+  
+  .job-card .job-actions {
+    margin-top: 10px;
+  }
+  
+  .job-card .job-actions button {
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .job-card .job-actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  .job-card .job-actions button:last-child {
+    background-color: #f44336;
+  }
+  
+  .job-card .job-actions button:last-child:hover {
+    background-color: #c32e26;
+  }
+  

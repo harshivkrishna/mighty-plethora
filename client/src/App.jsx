@@ -5,6 +5,7 @@ import ContactPage from './Pages/Contact/ContactPage'
 import AboutPage from './Pages/About/AboutPage'
 import Career from './Pages/Career/Career'
 import Admin from './Pages/Admin/Admin'
+import Jobs from './Components/Jobs/Jobs'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path='/about' element={<AboutPage/>}></Route>
         <Route path='/careers' element={<Career/>}></Route>
         <Route path='/admin' element={<Admin/>}></Route>
+        <Route path='/jobs' element={<Jobs/>}></Route>
       </Routes>
     </>
   )
