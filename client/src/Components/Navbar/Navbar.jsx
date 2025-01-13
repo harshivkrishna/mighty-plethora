@@ -45,7 +45,7 @@ const Navbar = () => {
       <motion.div
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.9, delay: 1, ease: "easeIn" }}
+        transition={{ duration: 0.9, delay: 6.5, ease: "easeIn" }}
         className="text-2xl flex font-bold logo-container"
       >
         <img src="/assets/logo.png" className="logo-img" alt="Logo" />
@@ -55,7 +55,7 @@ const Navbar = () => {
         className="hidden md:flex space-x-6"
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.9, delay: 1, ease: "easeIn" }}
+        transition={{ duration: 0.9, delay: 6.5, ease: "easeIn" }}
       >
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>

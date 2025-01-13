@@ -9,10 +9,12 @@ import Specials from './Components/Specials/Specials'
 import Gallery from './Components/Gallery/Gallery'
 import ContactSection from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
+import Loader from './Components/Loader/Loader'
 
 const App = () => {
   return (
     <div className='home-page overflow-x-hidden'>
+        <Loader/>
         <Navbar/>
         <Hero/>
         <About/>
