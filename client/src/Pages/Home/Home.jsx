@@ -13,6 +13,7 @@ import Loader from '../../Components/Loader/Loader'
 
 const Home = () => {
   const [image, setImage] = useState(null);
+  const [loader,setLoader] = useState(false);
   const [closePopup, setClosePopup] = useState(false);
   useEffect(() => {
     const fetchImage = async () => {
@@ -26,13 +27,16 @@ const Home = () => {
         console.error('Error fetching image:', error);
       }
     };
+    setTimeout(()=>{
+      setLoader(true);
+    },[6500])
 
     fetchImage();
   }, []);
   return (
     <div className='home-page overflow-x-hidden'>
         <Loader/>
-        {image && (
+        {image && loader && (
         <div className={`popup-image-container ${closePopup ? 'hide' : ""}`}>
           <div className='popup'>
             <i className='bx bx-x close-icon' onClick={() => { setClosePopup(true); }}></i>
