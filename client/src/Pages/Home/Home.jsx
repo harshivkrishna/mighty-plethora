@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Hero from '../../Components/Hero/Hero'
 import About from '../../Components/About/About'
 import Video from '../../Components/Video/Video'
@@ -12,9 +12,34 @@ import Footer from '../../Components/Footer/Footer'
 import Loader from '../../Components/Loader/Loader'
 
 const Home = () => {
+  const [image, setImage] = useState(null);
+  const [closePopup, setClosePopup] = useState(false);
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const res = await fetch('http://localhost:5000/api/images/latest');
+        const data = await res.json();
+        if (data.imagePath) {
+          setImage(`http://localhost:5000${data.imagePath}`);
+        }
+      } catch (error) {
+        console.error('Error fetching image:', error);
+      }
+    };
+
+    fetchImage();
+  }, []);
   return (
     <div className='home-page overflow-x-hidden'>
         <Loader/>
+        {image && (
+        <div className={`popup-image-container ${closePopup ? 'hide' : ""}`}>
+          <div className='popup'>
+            <i className='bx bx-x close-icon' onClick={() => { setClosePopup(true); }}></i>
+            <img src={image} alt="Discount & Offers" />
+          </div>
+        </div>
+      )}
         <Navbar delay={6.5}/>
         <Hero/>
         <About/>
