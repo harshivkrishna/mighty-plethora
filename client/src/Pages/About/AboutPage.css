@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+body{
+    background-color: black;
+}
+.contact-top-container{
+    height: 20vh;
+    background-color: black;
+}
+
+.contact-container{
+    padding: 0 20% ;
+    line-height: 32px;
+    margin-bottom: 40px;
+}
+
+.contact-container h1{
+    font-family: "Dancing Script",sans-serif;
+    font-size: 55px;
+    margin-bottom: 60px;
+    color: #cda45e;
+}
+
+@media (max-width:550px) {
+    .contact-container{
+        padding: 20px;
+    }
+}

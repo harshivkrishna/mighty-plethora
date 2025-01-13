@@ -1,0 +1,61 @@
+.category-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.category-container h1{
+    font-size: 50px;
+    font-family: "Dancing Script",sans-serif;
+    color: #cda45e;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+.category-inner-container{
+    padding: 20px;
+    display: flex;
+    color: white;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.category-inner-left-container{
+    flex-basis: 50%;
+}
+
+.category-inner-left-container p{
+    line-height: 40px;
+
+}
+
+.category-inner-right-container{
+    flex-basis: 50%;
+    width: 100%;
+    height: 100vh;
+}
+
+.category-inner-right-container img{
+    width: 100%;
+    height: inherit;
+    object-fit: contain;
+}
+
+@media (max-width:900px) {
+    .category-container .category-inner-container:nth-child(even){
+        flex-direction: column-reverse;
+    }
+    .category-container .category-inner-container:nth-child(odd){
+        flex-direction: column;
+    }
+
+    .category-inner-right-container img{
+        height: 50vh;
+    }
+
+
+}
+
+

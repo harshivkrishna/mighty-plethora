@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({delay}) => {
   const [isMobile, setIsMobile] = useState(false);
   const [bgColor, setBgColor] = useState("transparent");
 
@@ -45,7 +45,7 @@ const Navbar = () => {
       <motion.div
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.9, delay: 6.5, ease: "easeIn" }}
+        transition={{ duration: 0.9, delay: delay, ease: "easeIn" }}
         className="text-2xl flex font-bold logo-container"
       >
         <img src="/assets/logo.png" className="logo-img" alt="Logo" />
@@ -55,11 +55,10 @@ const Navbar = () => {
         className="hidden md:flex space-x-6"
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.9, delay: 6.5, ease: "easeIn" }}
+        transition={{ duration: 0.9, delay: delay, ease: "easeIn" }}
       >
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
-        <li><a href="/#gallery">Gallery</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/careers">Careers</a></li>
       </motion.ul>
@@ -68,6 +67,9 @@ const Navbar = () => {
         <motion.button
           onClick={toggleMobileMenu}
           whileTap={{ scale: 0.9 }}
+          initial={{opacity:0}}
+          animate={{opacity:1}}
+          transition={{delay:delay}}
           className="text-3xl"
         >
           {isMobile ? (
@@ -87,7 +89,6 @@ const Navbar = () => {
         >
           <li><a href="/" className="text-lg">Home</a></li>
           <li><a href="/about" className="text-lg">About</a></li>
-          <li><a href="#gallery" className="text-lg">Gallery</a></li>
           <li><a href="/contact" className="text-lg">Contact</a></li>
           <li><a href="/careers" className="text-lg">Careers</a></li>
         </motion.ul>
