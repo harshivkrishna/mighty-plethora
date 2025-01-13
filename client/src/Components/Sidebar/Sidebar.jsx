@@ -58,9 +58,8 @@ const Sidebar = ({delay}) => {
         transition={{ duration: 0.9, delay: delay, ease: "easeIn" }}
       >
         <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/careers">Careers</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li><a href="/jobs">Jobs</a></li>
       </motion.ul>
 
       <div className="md:hidden">
@@ -87,10 +86,9 @@ const Sidebar = ({delay}) => {
           transition={{ type: "spring", stiffness: 100 }}
           className="mobile-nav absolute top-0 left-0 bg-gray-800 text-white p-6 space-y-4 w-2/3 h-screen"
         >
-          <li><a href="/" className="text-lg">Home</a></li>
-          <li><a href="/about" className="text-lg">About</a></li>
-          <li><a href="/contact" className="text-lg">Contact</a></li>
-          <li><a href="/careers" className="text-lg">Careers</a></li>
+          <li><a href="/">Home</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li><a href="/jobs">Jobs</a></li>
         </motion.ul>
       )}
     </motion.nav>

@@ -50,7 +50,7 @@ const Upload = () => {
 
   return (
     <div className='text-white flex flex-col items-center '>
-        <h3 className='text-2xl text-black mb-10'>Upload an Image</h3>
+        <h3 className='text-2xl text-black mb-10 font-bold'>Upload an Image</h3>
       <input className='image-input'
         type="file"
         accept="image/*" // To limit to image types
