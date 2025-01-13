@@ -1,0 +1,41 @@
+/* Navbar.module.css */
+.navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #cda45e;
+    padding: 1rem 2rem;
+    z-index: 9999 !important;
+    transition: transform 0.3s ease-in-out;
+    position: absolute !important;
+    top: 0;    
+  }
+  
+  .logo-img{
+    width: 100px;
+    border-radius: 50%;
+  }
+  
+  .logo-container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .mobile-links{
+    height: 100vh !important;
+    width: 100%;
+    background-color: black;
+    z-index: 9999;
+  }
+  .navbar.hidden {
+    transform: translateY(-100%);
+  }
+  
+  ul li a{
+    font-weight: 700;
+  }
+  
+  .mobile-nav li{
+    border-bottom: 1px solid #cda45e;
+    padding: 2px;
+  }
