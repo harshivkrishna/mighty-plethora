@@ -37,10 +37,10 @@ const Home = () => {
     <div className='home-page overflow-x-hidden'>
         <Loader/>
         {image && loader && (
-        <div className={`popup-image-container pointer-events-none ${closePopup ? 'hide' : ""}`}>
+        <div className={`popup-image-container ${closePopup ? 'hide' : ""}`}>
           <div className='popup'>
             <i className='bx bx-x close-icon' onClick={() => { setClosePopup(true); }}></i>
-            <img src={image} alt="Discount & Offers" />
+            <img src={image} className='pointer-events-none' alt="Discount & Offers" />
           </div>
         </div>
       )}
