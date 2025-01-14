@@ -1,0 +1,84 @@
+.apply-container {
+    width: 100%;
+    padding: 20px 10px;
+    background-color: #0c0b09;
+    color: white;
+    text-align: center;
+  }
+  
+  .apply-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .apply-container form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #1a1814;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .apply-container form label {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0 5px;
+    display: block;
+    color: #cda45e;
+  }
+  
+  .apply-container form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    background-color: #0c0b09;
+    border: 1px solid #625b4b;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .apply-container form input:focus {
+    border-color: #cda45e;
+  }
+  
+  .apply-container form input::placeholder {
+    color: #a49b89;
+  }
+  
+  .apply-container form input[type="file"] {
+    padding: 10px;
+    color: white;
+  }
+  
+  .apply-container form button {
+    background-color: #cda45e;
+    border: 0;
+    padding: 12px 40px;
+    color: white;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-top: 20px;
+  }
+  .error-text {
+    color: #ed3c0d;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  
+  .apply-container form button:hover {
+    background-color: #d3af71;
+  }
+  
+  @media (max-width: 775px) {
+    .apply-container form {
+      padding: 20px;
+    }
+  }
+  

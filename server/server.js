@@ -2,20 +2,20 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
+const multer = require('multer');
 const dotenv = require('dotenv');
-const serverless = require('serverless-http'); // Required for serverless
-
-const imageRoutes = require('../routes/imageRoutes'); // Adjust path for routes
+const imageRoutes = require('./routes/imageRoutes'); // Import the image routes
 
 dotenv.config();
 
 // Initialize express app
 const app = express();
+const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, '../public/uploads')));
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads'))); // Serve uploaded images from the public/uploads folder
 
 // MongoDB connection
 mongoose
@@ -35,8 +35,32 @@ const jobSchema = new mongoose.Schema({
 
 const Job = mongoose.model('Job', jobSchema);
 
+// Application schema and model
+const applicationSchema = new mongoose.Schema({
+  jobId: { type: mongoose.Schema.Types.ObjectId, ref: 'Job', required: true },
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  phone: { type: String, required: true },
+  portfolio: { type: String },
+  resume: { type: String, required: true },
+});
+
+const Application = mongoose.model('Application', applicationSchema);
+
+// Configure multer for file uploads
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'public/uploads/resumes');
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+
+const upload = multer({ storage });
+
 // Routes
-app.use('/api/images', imageRoutes);
+app.use('/api/images', imageRoutes); // Use image routes for image upload
 
 // Fetch available jobs
 app.get('/api/jobs', async (req, res) => {
@@ -93,5 +117,36 @@ app.delete('/api/jobs/:id', async (req, res) => {
   }
 });
 
-// Export serverless handler
-module.exports = serverless(app);
+// Submit a job application
+app.post('/api/applications', upload.single('resume'), async (req, res) => {
+  const { jobId, name, email, phone, portfolio } = req.body;
+  const resume = req.file ? `/uploads/resumes/${req.file.filename}` : null;
+
+  if (!resume) {
+    return res.status(400).json({ error: 'Resume upload failed' });
+  }
+
+  try {
+    const application = new Application({ jobId, name, email, phone, portfolio, resume });
+    await application.save();
+    res.status(201).json({ message: 'Application submitted successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to submit application' });
+  }
+});
+
+// Fetch all applications (Admin)
+app.get('/api/applications', async (req, res) => {
+  try {
+    const applications = await Application.find().populate('jobId');
+    res.json(applications);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch applications' });
+  }
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});

@@ -6,6 +6,8 @@ import AboutPage from './Pages/About/AboutPage'
 import Career from './Pages/Career/Career'
 import Admin from './Pages/Admin/Admin'
 import Jobs from './Components/Jobs/Jobs'
+import Apply from './Components/Apply/Apply'
+import Application from './Components/Application/Application'
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <Route path='/careers' element={<Career/>}></Route>
         <Route path='/admin' element={<Admin/>}></Route>
         <Route path='/jobs' element={<Jobs/>}></Route>
+        <Route path="/apply/:jobId" element={<Apply />} />
+        <Route path='/admin/applications' element={<Application/>}></Route>
       </Routes>
     </>
   )

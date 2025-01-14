@@ -1,0 +1,117 @@
+/* General Styles */
+  
+  .job-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .job-card h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    color: #333333;
+  }
+  
+  .job-card p {
+    font-size: 14px;
+    margin: 0 0 15px;
+    color: #555555;
+    line-height: 1.5;
+  }
+  
+  .job-card span {
+    font-size: 12px;
+    color: #777777;
+    margin-bottom: 15px;
+  }
+  
+  /* Button Styles */
+  .job-card .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .job-card button {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .job-card button:hover {
+    background-color: #0056b3;
+  }
+  
+  .job-card button.secondary {
+    background-color: #6c757d;
+  }
+  
+  .job-card button.secondary:hover {
+    background-color: #5a6268;
+  }
+  /* .job-card.expanded {
+    background-color: #e6f7ff; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  } */
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .job-card {
+      padding: 15px;
+    }
+  
+    .job-card h4 {
+      font-size: 16px;
+    }
+  
+    .job-card p {
+      font-size: 13px;
+    }
+  
+    .job-card button {
+      font-size: 12px;
+      padding: 8px 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .job-card {
+      padding: 10px;
+    }
+  
+    .job-card h4 {
+      font-size: 14px;
+    }
+  
+    .job-card p {
+      font-size: 12px;
+    }
+  
+    .job-card .buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .job-card button {
+      width: 100%;
+    }
+  }
+  

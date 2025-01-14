@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import Upload from '../Upload/Upload';
-
+import { toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify';
 const Admin = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [email, setEmail] = useState('');
@@ -17,7 +18,7 @@ const Admin = () => {
     if (email === adminCredentials.email && password === adminCredentials.password) {
       setIsAuthenticated(true);
     } else {
-      alert('Invalid email or password');
+      toast.error('Invalid email or password')
     }
   };
 
@@ -30,6 +31,7 @@ const Admin = () => {
   if (!isAuthenticated) {
     return (
       <div className="flex justify-center items-center h-screen bg-gray-800 text-white">
+        <ToastContainer/>
         <form
           onSubmit={handleLogin}
           className="bg-gray-700 p-8 rounded-lg shadow-lg text-center"
