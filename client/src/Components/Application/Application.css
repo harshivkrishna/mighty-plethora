@@ -54,3 +54,32 @@
     padding: 10px 20px;
     border-radius: 5px;
   }
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .delete-button:hover {
+    background-color: #d32f2f;
+  }
+
+  .application-card{
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .delete-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .page-button{
+   color: rgb(59 130 246 / var(--tw-text-opacity, 1)) ;
+  }

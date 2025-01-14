@@ -1,29 +1,42 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Home from './Pages/Home/Home'
-import ContactPage from './Pages/Contact/ContactPage'
-import AboutPage from './Pages/About/AboutPage'
-import Career from './Pages/Career/Career'
-import Admin from './Pages/Admin/Admin'
-import Jobs from './Components/Jobs/Jobs'
-import Apply from './Components/Apply/Apply'
-import Application from './Components/Application/Application'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import ContactPage from './Pages/Contact/ContactPage';
+import AboutPage from './Pages/About/AboutPage';
+import Career from './Pages/Career/Career';
+import Admin from './Pages/Admin/Admin';
+import Apply from './Components/Apply/Apply';
+import JobApplication from './Pages/JobApplication/JobApplication';
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'; // Import the ProtectedRoute component
+import AdminJobs from './Pages/AdminJobs/AdminJobs';
 
 const App = () => {
   return (
-    <>
-      <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/contact' element={<ContactPage/>}></Route>
-        <Route path='/about' element={<AboutPage/>}></Route>
-        <Route path='/careers' element={<Career/>}></Route>
-        <Route path='/admin' element={<Admin/>}></Route>
-        <Route path='/jobs' element={<Jobs/>}></Route>
-        <Route path="/apply/:jobId" element={<Apply />} />
-        <Route path='/admin/applications' element={<Application/>}></Route>
-      </Routes>
-    </>
-  )
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/contact' element={<ContactPage />} />
+      <Route path='/about' element={<AboutPage />} />
+      <Route path='/careers' element={<Career />} />
+      <Route path='/admin' element={<Admin/>}/>
+      <Route
+        path='/admin/jobs'
+        element={
+          <ProtectedRoute>
+            <AdminJobs />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path='/admin/applications'
+        element={
+          <ProtectedRoute>
+            <JobApplication />
+          </ProtectedRoute>
+        }
+      />
+      <Route path='/apply/:jobId' element={<Apply />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

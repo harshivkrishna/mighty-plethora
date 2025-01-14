@@ -57,6 +57,10 @@ const Jobs = () => {
     setJobData(job);
     setIsEditing(true);
     setEditingJobId(job._id);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   // Reset form
@@ -70,6 +74,7 @@ const Jobs = () => {
     <div className="admin-page">
       <h2>Admin - Manage Jobs</h2>
       <form onSubmit={handleSaveJob} className="job-form">
+        <h2 className='text-xl font-semibold text-white'>Job Title</h2>
         <input
           type="text"
           placeholder="Job Title"
@@ -77,12 +82,14 @@ const Jobs = () => {
           onChange={(e) => setJobData({ ...jobData, title: e.target.value })}
           required
         />
+        <h2 className='text-xl font-semibold text-white'>JOB Description</h2>
         <textarea
           placeholder="Job Description"
           value={jobData.description}
           onChange={(e) => setJobData({ ...jobData, description: e.target.value })}
           required
         ></textarea>
+        <h2 className='text-xl font-semibold text-white'>Location</h2>
         <input
           type="text"
           placeholder="Location"
@@ -99,7 +106,7 @@ const Jobs = () => {
       </form>
 
       <div className="job-list">
-        <h3>Available Jobs</h3>
+        <h3 className='text-white text-2xl font-bold my-6'>Available Jobs</h3>
         {jobs.length > 0 ? (
           jobs.map((job) => (
             <div key={job._id} className="job-card">

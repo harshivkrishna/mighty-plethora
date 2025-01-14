@@ -146,6 +146,22 @@ app.get('/api/applications', async (req, res) => {
   }
 });
 
+// Delete an application
+app.delete('/api/applications/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deletedApplication = await Application.findByIdAndDelete(id);
+    if (!deletedApplication) {
+      return res.status(404).json({ error: 'Application not found' });
+    }
+    res.status(204).send(); // Successfully deleted, no content to send
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to delete application' });
+  }
+});
+
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

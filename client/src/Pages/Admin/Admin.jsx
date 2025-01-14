@@ -1,24 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import Upload from '../Upload/Upload';
-import { toast } from 'react-toastify'
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+
 const Admin = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const adminCredentials = {
-    email: 'admin@example.com', // Replace with actual admin email
-    password: 'admin123', // Replace with actual admin password
+    email: 'admin@example.com',
+    password: 'admin123',
   };
+
+  // Check if the user is authenticated on component mount
+  useEffect(() => {
+    const storedAuth = localStorage.getItem('isAuthenticated');
+    if (storedAuth === 'true') {
+      setIsAuthenticated(true);
+    }
+  }, []);
 
   const handleLogin = (e) => {
     e.preventDefault();
     if (email === adminCredentials.email && password === adminCredentials.password) {
       setIsAuthenticated(true);
+      localStorage.setItem('isAuthenticated', 'true'); // Store auth state in localStorage
     } else {
-      toast.error('Invalid email or password')
+      toast.error('Invalid email or password');
     }
   };
 
@@ -26,12 +35,14 @@ const Admin = () => {
     setIsAuthenticated(false);
     setEmail('');
     setPassword('');
+    localStorage.removeItem('isAuthenticated'); // Clear auth state from localStorage
   };
 
+  // Display the login form if not authenticated
   if (!isAuthenticated) {
     return (
       <div className="flex justify-center items-center h-screen bg-gray-800 text-white">
-        <ToastContainer/>
+        <ToastContainer />
         <form
           onSubmit={handleLogin}
           className="bg-gray-700 p-8 rounded-lg shadow-lg text-center"
@@ -43,7 +54,7 @@ const Admin = () => {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="p-2 w-full rounded-md"
+              className="p-2 w-full rounded-md text-black outline-none border-0 "
               required
             />
           </div>
@@ -53,7 +64,7 @@ const Admin = () => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="p-2 w-full rounded-md"
+              className="p-2 w-full rounded-md  text-black outline-none border-0 "
               required
             />
           </div>
@@ -68,6 +79,7 @@ const Admin = () => {
     );
   }
 
+  // Once authenticated, show the Admin panel
   return (
     <div>
       <Sidebar />
