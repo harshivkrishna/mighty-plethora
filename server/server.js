@@ -71,6 +71,16 @@ app.get('/api/jobs', async (req, res) => {
   }
 });
 
+app.post('/', async (req, res) => {
+  try {
+    res.status(201).json({
+      api:'working'
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to add job' });
+  }
+});
+
 app.post('/api/jobs', async (req, res) => {
   const { title, description, location } = req.body;
   try {
