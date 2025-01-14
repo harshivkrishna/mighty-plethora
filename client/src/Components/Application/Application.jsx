@@ -8,7 +8,7 @@ const Application = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const applicationsPerPage = 2;
+  const applicationsPerPage = 10;
 
   useEffect(() => {
     const fetchApplications = async () => {
