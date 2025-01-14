@@ -2,10 +2,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import path from 'path';
 import multer from 'multer';
 import dotenv from 'dotenv';
-import imageRoutes from '../../routes/imageRoutes'; // Adjusted the path
 
 dotenv.config();
 
@@ -15,7 +13,6 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
 // MongoDB connection
 mongoose
@@ -50,7 +47,7 @@ const Application = mongoose.model('Application', applicationSchema);
 // Configure multer for file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'public/uploads/resumes');
+    cb(null, '/tmp/uploads'); // Use /tmp for temporary file storage in Vercel
   },
   filename: (req, file, cb) => {
     cb(null, `${Date.now()}-${file.originalname}`);
@@ -60,24 +57,12 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Routes
-app.use('/api/images', imageRoutes); // Adjust path if needed
-
 app.get('/api/jobs', async (req, res) => {
   try {
     const jobs = await Job.find();
     res.json(jobs);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch jobs' });
-  }
-});
-
-app.post('/', async (req, res) => {
-  try {
-    res.status(201).json({
-      api:'working'
-    });
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to add job' });
   }
 });
 
@@ -92,9 +77,25 @@ app.post('/api/jobs', async (req, res) => {
   }
 });
 
-// More routes...
+app.post('/api/applications', upload.single('resume'), async (req, res) => {
+  const { jobId, name, email, phone, portfolio } = req.body;
+  const resume = req.file ? req.file.path : null;
+
+  if (!resume) {
+    return res.status(400).json({ error: 'Resume upload failed' });
+  }
+
+  try {
+    const application = new Application({ jobId, name, email, phone, portfolio, resume });
+    await application.save();
+    res.status(201).json({ message: 'Application submitted successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to submit application' });
+  }
+});
 
 // Serverless Function Handler
 export default (req, res) => {
-  app(req, res); // Pass Express app to the Vercel handler
+  app(req, res); // Pass the Express app to the Vercel handler
 };
