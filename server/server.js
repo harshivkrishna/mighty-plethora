@@ -1,21 +1,21 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const path = require('path');
-const multer = require('multer');
-const dotenv = require('dotenv');
-const imageRoutes = require('./routes/imageRoutes'); // Import the image routes
+// pages/api/index.js
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import path from 'path';
+import multer from 'multer';
+import dotenv from 'dotenv';
+import imageRoutes from '../../routes/imageRoutes'; // Adjusted the path
 
 dotenv.config();
 
 // Initialize express app
 const app = express();
-const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, 'public/uploads'))); // Serve uploaded images from the public/uploads folder
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
 // MongoDB connection
 mongoose
@@ -60,9 +60,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Routes
-app.use('/api/images', imageRoutes); // Use image routes for image upload
+app.use('/api/images', imageRoutes); // Adjust path if needed
 
-// Fetch available jobs
 app.get('/api/jobs', async (req, res) => {
   try {
     const jobs = await Job.find();
@@ -72,7 +71,6 @@ app.get('/api/jobs', async (req, res) => {
   }
 });
 
-// Add a new job
 app.post('/api/jobs', async (req, res) => {
   const { title, description, location } = req.body;
   try {
@@ -84,85 +82,9 @@ app.post('/api/jobs', async (req, res) => {
   }
 });
 
-// Update a job
-app.put('/api/jobs/:id', async (req, res) => {
-  const { id } = req.params;
-  const { title, description, location } = req.body;
-  try {
-    const updatedJob = await Job.findByIdAndUpdate(
-      id,
-      { title, description, location },
-      { new: true }
-    );
-    if (!updatedJob) {
-      return res.status(404).json({ error: 'Job not found' });
-    }
-    res.json(updatedJob);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to update job' });
-  }
-});
+// More routes...
 
-// Delete a job
-app.delete('/api/jobs/:id', async (req, res) => {
-  const { id } = req.params;
-  try {
-    const deletedJob = await Job.findByIdAndDelete(id);
-    if (!deletedJob) {
-      return res.status(404).json({ error: 'Job not found' });
-    }
-    res.status(204).send();
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to delete job' });
-  }
-});
-
-// Submit a job application
-app.post('/api/applications', upload.single('resume'), async (req, res) => {
-  const { jobId, name, email, phone, portfolio } = req.body;
-  const resume = req.file ? `/uploads/resumes/${req.file.filename}` : null;
-
-  if (!resume) {
-    return res.status(400).json({ error: 'Resume upload failed' });
-  }
-
-  try {
-    const application = new Application({ jobId, name, email, phone, portfolio, resume });
-    await application.save();
-    res.status(201).json({ message: 'Application submitted successfully' });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Failed to submit application' });
-  }
-});
-
-// Fetch all applications (Admin)
-app.get('/api/applications', async (req, res) => {
-  try {
-    const applications = await Application.find().populate('jobId');
-    res.json(applications);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch applications' });
-  }
-});
-
-// Delete an application
-app.delete('/api/applications/:id', async (req, res) => {
-  const { id } = req.params;
-  try {
-    const deletedApplication = await Application.findByIdAndDelete(id);
-    if (!deletedApplication) {
-      return res.status(404).json({ error: 'Application not found' });
-    }
-    res.status(204).send(); // Successfully deleted, no content to send
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Failed to delete application' });
-  }
-});
-
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+// Serverless Function Handler
+export default (req, res) => {
+  app(req, res); // Pass Express app to the Vercel handler
+};
