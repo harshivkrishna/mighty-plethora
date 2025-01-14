@@ -88,7 +88,16 @@ const Apply = () => {
         body: formDataToSend,
       });
       if (response.ok) {
-        toast.success('Application submitted successfully!')
+        toast.success('Application submitted successfully!');
+        
+        // Clear the form after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          portfolio: '',
+          resume: null,
+        });
       } else {
         toast.error('Failed to submit application.');
       }
@@ -99,7 +108,7 @@ const Apply = () => {
 
   return (
     <div className="apply-container">
-        <ToastContainer/>
+        <ToastContainer />
       <h2>Apply for Job ID: {jobId}</h2>
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <label>Name:</label>
