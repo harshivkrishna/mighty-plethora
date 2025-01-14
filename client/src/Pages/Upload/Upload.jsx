@@ -25,7 +25,7 @@ const Upload = () => {
     formData.append('image', image); // Append the image to the form data
 
     try {
-      const res = await fetch('http://localhost:5000/api/images/upload', {
+      const res = await fetch('https://mighty-plethora-api-zfw2.vercel.app/api/images/upload', {
         method: 'POST',
         body: formData, // Send form data with the image file
       });
