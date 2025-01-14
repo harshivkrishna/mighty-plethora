@@ -13,7 +13,7 @@ const Application = () => {
   useEffect(() => {
     const fetchApplications = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/applications');
+        const response = await fetch('https://mighty-plethora-api-zfw2.vercel.app/api/applications');
         if (!response.ok) {
           throw new Error('Failed to fetch applications');
         }
@@ -50,7 +50,7 @@ const Application = () => {
 
   const handleDelete = async (applicationId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/applications/${applicationId}`, {
+      const response = await fetch(`https://mighty-plethora-api-zfw2.vercel.app/api/applications/${applicationId}`, {
         method: 'DELETE',
       });
       if (response.ok) {
@@ -93,7 +93,7 @@ const Application = () => {
                 </a>
               </p>
               <p><strong>Resume:</strong> 
-                <a href={`http://localhost:5000${application.resume}`}  className='text-blue-500 underline' target="_blank" rel="noopener noreferrer">
+                <a href={`https://mighty-plethora-api-zfw2.vercel.app${application.resume}`}  className='text-blue-500 underline' target="_blank" rel="noopener noreferrer">
                   View Resume
                 </a>
               </p>

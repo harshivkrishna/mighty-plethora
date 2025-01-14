@@ -8,7 +8,7 @@ const Jobs = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [editingJobId, setEditingJobId] = useState(null);
 
-  const API_URL = 'http://localhost:5000/api/jobs';
+  const API_URL = 'https://mighty-plethora-api-zfw2.vercel.app/api/jobs';
 
   // Fetch jobs
   const fetchJobs = async () => {
