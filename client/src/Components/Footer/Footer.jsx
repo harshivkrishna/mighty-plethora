@@ -183,7 +183,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <i className="bx bx-chevron-right"></i>{" "}
-                    <a href="/careers">Careers</a>
+                    <a href="/careers">Opportunities</a>
                   </li>
                   
                 </ul>
