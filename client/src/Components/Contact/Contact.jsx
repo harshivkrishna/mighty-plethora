@@ -56,6 +56,22 @@ const EventContactForm = () => {
         (response) => {
           setStatus('success');
           toast.success('Message sent successfully');
+          setFormData({
+            fullName: '',
+            email: '',
+            phoneNumber: '',
+            eventType: '',
+            eventDate: '',
+            eventLocation: '',
+            numberOfGuests: '',
+            eventServices: [],
+            budgetRange: '',
+            additionalInfo: '',
+            referralSource: '',
+            contactMethod: '',
+            freeConsultation: '',
+            attachedFiles: null,
+          });
         },
         (error) => {
           setStatus('error');
