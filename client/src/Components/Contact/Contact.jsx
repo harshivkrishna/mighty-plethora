@@ -50,7 +50,7 @@ const EventContactForm = () => {
     setStatus('loading');
 
     emailjs
-      .send('service_8z5dd3m', 'template_9ayyzxn', formData, '7iwjEptVs0k1BFMG8')
+      .send('service_8z5dd3m', 'template_sjxo0q6', formData, '7iwjEptVs0k1BFMG8')
       .then(
         (response) => {
           setStatus('success');
