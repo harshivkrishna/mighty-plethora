@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
 import './Contact.css';
-
+import 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify';
 const EventContactForm = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -54,17 +55,18 @@ const EventContactForm = () => {
       .then(
         (response) => {
           setStatus('success');
-          console.log('Message sent successfully:', response);
+          toast.success('Message sent successfully');
         },
         (error) => {
           setStatus('error');
-          console.error('Failed to send message:', error);
+          toast.error('Failed to send message');
         }
       );
   };
 
   return (
     <section id="contact" className="contact bg-black">
+      <ToastContainer/>
       <div className="text-container heading-container relative">
         <span className="sub-title">GET IN TOUCH</span>
         <h1 className="text-5xl text-white font-bold mt-2">Event Inquiry</h1>
