@@ -179,6 +179,14 @@ const Footer = () => {
                   </li>
                   <li>
                     <i className="bx bx-chevron-right"></i>{" "}
+                    <a href="/gallery">Gallery</a>
+                  </li>
+                  <li>
+                    <i className="bx bx-chevron-right"></i>{" "}
+                    <a href="/blog">Blogs</a>
+                  </li>
+                  <li>
+                    <i className="bx bx-chevron-right"></i>{" "}
                     <a href="/contact">Contact Us</a>
                   </li>
                   <li>

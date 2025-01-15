@@ -59,6 +59,8 @@ const Navbar = ({delay}) => {
       >
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/blog">Blog</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/careers">Opportunities</a></li>
       </motion.ul>
@@ -89,6 +91,8 @@ const Navbar = ({delay}) => {
         >
           <li><a href="/" className="text-lg">Home</a></li>
           <li><a href="/about" className="text-lg">About</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/blog">Blog</a></li>
           <li><a href="/contact" className="text-lg">Contact</a></li>
           <li><a href="/careers" className="text-lg">Opportunities</a></li>
         </motion.ul>
