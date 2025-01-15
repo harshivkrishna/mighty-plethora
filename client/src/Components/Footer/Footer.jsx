@@ -145,9 +145,9 @@ const Footer = () => {
               >
                 <h3>Mighty Plethora Events</h3>
                 <p className="footer-address">
-                Door no:1, Flat no:1/2, 1st St, Vijaya Nagar,  <br />
-                Sridevikuppam, Valasaravakkam, Chennai, Tamil Nadu 600087<br />
-                  <strong>Phone:</strong> +91 78453 71177<br />
+                Head Office No. 72 Radha Avenue Sridevikuppam main road,  <br />
+                Valasaravakkam, Chennai, TamilNadu 600087<br />
+                  <strong>Phone:</strong> +91 84282 01000<br />
                   <strong>Email:</strong> sample@gmail.com<br />
                 </p>
                 <div className="social-links mt-3 flex space-x-2">
