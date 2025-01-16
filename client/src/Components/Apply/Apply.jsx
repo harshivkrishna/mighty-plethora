@@ -83,7 +83,7 @@ const Apply = () => {
     formDataToSend.append('jobId', jobId);
 
     try {
-      const response = await fetch('https://mighty-plethora-api-zfw2.vercel.app/api/applications', {
+      const response = await fetch('http://localhost:5000/api/applications', {
         method: 'POST',
         body: formDataToSend,
       });
