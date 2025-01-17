@@ -21,7 +21,7 @@ const Home = () => {
         const res = await fetch('https://mighty-plethora-api-zfw2.vercel.app/api/images/latest');
         const data = await res.json();
         if (data.imagePath) {
-          setImage(`https://mighty-plethora-api-zfw2.vercel.app${data.imagePath}`);
+          setImage(`${data.imagePath}`);
         }
       } catch (error) {
         console.error('Error fetching image:', error);
