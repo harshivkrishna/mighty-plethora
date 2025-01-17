@@ -72,6 +72,10 @@ const Apply = () => {
   };
 
   const handleSubmit = async (e) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
     e.preventDefault();
     setLoading(true);
     if (!validateForm()) {
