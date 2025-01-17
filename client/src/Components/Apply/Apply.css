@@ -70,7 +70,24 @@
     font-size: 14px;
     margin-top: 5px;
   }
+  .loader {
+    border: 4px solid rgba(255, 0, 0, 0.2); /* Light red border */
+    border-top: 4px solid red; /* Solid red border on top */
+    border-radius: 50%;
+    width: 40px; /* Adjust size */
+    height: 40px; /* Adjust size */
+    animation: spin 1s linear infinite;
+  }
   
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+    
   
   .apply-container form button:hover {
     background-color: #d3af71;

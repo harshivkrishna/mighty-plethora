@@ -6,6 +6,7 @@ import Navbar from '../Navbar/Navbar';
 
 const Apply = () => {
   const { jobId } = useParams();
+  const [loading,setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -72,8 +73,9 @@ const Apply = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     if (!validateForm()) {
+      setLoading(false);
       return;
     }
 
@@ -102,13 +104,19 @@ const Apply = () => {
       } else {
         toast.error('Failed to submit application.');
       }
+      
     } catch (error) {
       console.error('Error submitting application:', error);
+      
     }
+    setLoading(false);
   };
 
   return (
     <div>
+      { loading && <div className='w-full h-full flex justify-center items-center z-10 absolute top-0 left-0 bg-black'>
+        <div className="loader"></div>
+      </div> }
       <Navbar/>
       <div className='h-24'></div>
       <div className="apply-container">
