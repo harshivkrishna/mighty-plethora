@@ -6,7 +6,6 @@ const Upload = () => {
   const [image, setImage] = useState(null); // For storing selected image
   const [loading, setLoading] = useState(false); // To show loading status
   const [message, setMessage] = useState(''); // For showing success/error messages
-  const [imagePreview, setImagePreview] = useState(''); // For showing image preview
 
   // Handle image file change
   const handleImageChange = (e) => {
@@ -17,12 +16,10 @@ const Upload = () => {
       if (fileType !== 'image') {
         setMessage('Please select a valid image file.');
         setImage(null);
-        setImagePreview('');
         return;
       }
 
       setImage(selectedImage); // Store the selected file
-      setImagePreview(URL.createObjectURL(selectedImage)); // Show image preview
       setMessage(''); // Reset any previous messages
     }
   };
@@ -73,11 +70,6 @@ const Upload = () => {
         accept="image/*" // To limit to image types
         onChange={handleImageChange}
       />
-      {imagePreview && (
-        <div className='image-preview'>
-          <img src={imagePreview} alt="Preview" className="preview-image" />
-        </div>
-      )}
       <button onClick={handleImageUpload} disabled={loading} className='upload-btn'>
         {loading ? 'Uploading...' : 'Upload Image'}
       </button>
