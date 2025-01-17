@@ -165,7 +165,8 @@ const Apply = () => {
 
         <label>Resume:</label>
         <input
-          type="file"
+           type="file"
+           accept="image/*"
           name="resume"
           onChange={handleFileChange}
           required
