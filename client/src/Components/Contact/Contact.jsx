@@ -164,7 +164,7 @@ const EventContactForm = () => {
 
           <div className="form-group mt-3">
             <input
-              type="date"
+              type="text"
               name="eventDate"
               className="form-control w-full px-4 py-2 border border-gray-300 rounded-md"
               value={formData.eventDate}
