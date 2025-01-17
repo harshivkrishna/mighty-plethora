@@ -94,14 +94,13 @@ const Application = () => {
               </p>
               <p><strong>Resume:</strong>
                 <a
-                  href={`${application.resumeUrl}?attachment=true`}
+                  href={application.resumeUrl}
                   className='text-blue-500 underline'
-                  target="_blank"
+                  download // This attribute ensures the image is downloaded instead of being opened in the browser
                   rel="noopener noreferrer"
                 >
                   Download Resume
                 </a>
-
               </p>
               <button className="delete-button" onClick={() => handleDelete(application._id)}>
                 Delete Application
