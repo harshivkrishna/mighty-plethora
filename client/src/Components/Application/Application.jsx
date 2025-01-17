@@ -87,15 +87,21 @@ const Application = () => {
               <p><strong>Applicant Name:</strong> {application.name}</p>
               <p><strong>Email:</strong> {application.email}</p>
               <p><strong>Phone:</strong> {application.phone}</p>
-              <p><strong>Portfolio:</strong> 
+              <p><strong>Portfolio:</strong>
                 <a href={application.portfolio} target="_blank" className='text-blue-500 underline' rel="noopener noreferrer">
                   View Portfolio
                 </a>
               </p>
-              <p><strong>Resume:</strong> 
-                <a href={`${application.resumeUrl}`}  className='text-blue-500 underline' target="_blank" rel="noopener noreferrer">
-                  View Resume
+              <p><strong>Resume:</strong>
+                <a
+                  href={`${application.resumeUrl}?attachment=true`}
+                  className='text-blue-500 underline'
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download Resume
                 </a>
+
               </p>
               <button className="delete-button" onClick={() => handleDelete(application._id)}>
                 Delete Application
@@ -109,16 +115,16 @@ const Application = () => {
 
       {/* Pagination Controls */}
       <div className="pagination flex justify-center items-center gap-6 my-4">
-        <button 
-          onClick={() => handlePageChange(currentPage - 1)} 
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
           className='page-button'
         >
           Previous
         </button>
         <span>Page {currentPage} of {totalPages}</span>
-        <button 
-          onClick={() => handlePageChange(currentPage + 1)} 
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
           className='page-button'
         >
