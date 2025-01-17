@@ -152,7 +152,7 @@ const EventContactForm = () => {
               onChange={handleInputChange}
               required
             >
-              <option value="" className='option-one'>Select Event Type</option>
+              <option value="" disabled selected className='option-one'>Select Event Type</option>
               <option value="Wedding">Wedding</option>
               <option value="Corporate Event">Corporate Event</option>
               <option value="Birthday Party">Birthday Party</option>
