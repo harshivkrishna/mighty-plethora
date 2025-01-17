@@ -39,3 +39,9 @@
     border-bottom: 1px solid #cda45e;
     padding: 2px;
   }
+
+  @media (max-width:600px) {
+    .navbar{
+      padding: 0.5rem 2rem;
+    }
+  }
