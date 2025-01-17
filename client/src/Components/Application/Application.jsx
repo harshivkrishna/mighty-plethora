@@ -93,7 +93,7 @@ const Application = () => {
                 </a>
               </p>
               <p><strong>Resume:</strong> 
-                <a href={`https://mighty-plethora-api-zfw2.vercel.app${application.resume}`}  className='text-blue-500 underline' target="_blank" rel="noopener noreferrer">
+                <a href={`https://mighty-plethora-api-zfw2.vercel.app${application.resumeUrl}`}  className='text-blue-500 underline' target="_blank" rel="noopener noreferrer">
                   View Resume
                 </a>
               </p>
