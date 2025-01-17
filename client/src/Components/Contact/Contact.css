@@ -110,10 +110,14 @@
     color: #a49b89;
   }
   
-  .contact .php-email-form input::placeholder, .contact .php-email-form textarea::placeholder {
+  .contact .php-email-form input::placeholder, .contact .php-email-form textarea::placeholder ,.option-one {
+    color: #a49b89 !important;
+  }
+
+  .option-one{
     color: #a49b89;
   }
-  
+
   .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
     border-color: #cda45e;
   }
