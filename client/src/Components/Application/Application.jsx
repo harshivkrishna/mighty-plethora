@@ -98,6 +98,7 @@ const Application = () => {
                   className='text-blue-500 underline'
                   download // This attribute ensures the image is downloaded instead of being opened in the browser
                   rel="noopener noreferrer"
+                  target='_blank'
                 >
                   Download Resume
                 </a>
