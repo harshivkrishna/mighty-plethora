@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Apply.css';
 import { ToastContainer, toast } from 'react-toastify';
+import Navbar from '../Navbar/Navbar';
 
 const Apply = () => {
   const { jobId } = useParams();
@@ -107,7 +108,10 @@ const Apply = () => {
   };
 
   return (
-    <div className="apply-container">
+    <div>
+      <Navbar/>
+      <div className='h-24'></div>
+      <div className="apply-container">
         <ToastContainer />
       <h2>Apply for Job ID: {jobId}</h2>
       <form onSubmit={handleSubmit} encType="multipart/form-data">
@@ -162,6 +166,7 @@ const Apply = () => {
 
         <button type="submit">Submit Application</button>
       </form>
+    </div>
     </div>
   );
 };

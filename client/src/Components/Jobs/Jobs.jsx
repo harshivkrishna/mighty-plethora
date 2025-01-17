@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Jobs.css';
-import Footer from '../../Components/Footer/Footer';
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
   const [jobData, setJobData] = useState({ title: '', description: '', location: '' });
