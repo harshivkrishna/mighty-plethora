@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Application.css';
 import 'react-toastify';
 import { toast } from 'react-toastify';
-import { jsPDF } from 'jspdf';
 
 const Application = () => {
   const [applications, setApplications] = useState([]);
@@ -68,22 +67,6 @@ const Application = () => {
     }
   };
 
-  const convertToPDF = (application) => {
-    const doc = new jsPDF();
-
-    // You can add details like Name, Job Title, etc., in the PDF
-    doc.text(`Applicant Name: ${application.name}`, 10, 10);
-    doc.text(`Job Title: ${application.jobId?.title || 'Unknown'}`, 10, 20);
-    doc.text(`Email: ${application.email}`, 10, 30);
-    doc.text(`Phone: ${application.phone}`, 10, 40);
-
-    // Add Resume as an attachment or as text
-    // (You could add more details or content here, depending on the type of resume)
-
-    // Save the generated PDF
-    doc.save(`${application.name}_Resume.pdf`);
-  };
-
   if (loading) {
     return <div className="loading">Loading applications...</div>;
   }
@@ -109,14 +92,16 @@ const Application = () => {
                   View Portfolio
                 </a>
               </p>
-              <p><strong>Resume:</strong> 
-                {/* The button will trigger PDF creation */}
-                <button
+              <p><strong>Resume:</strong>
+                <a
+                  href={`${application.resumeUrl}?attachment=true`}
                   className='text-blue-500 underline'
-                  onClick={() => convertToPDF(application)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Download Resume as PDF
-                </button>
+                  Download Resume
+                </a>
+
               </p>
               <button className="delete-button" onClick={() => handleDelete(application._id)}>
                 Delete Application
