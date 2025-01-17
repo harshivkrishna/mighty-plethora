@@ -12,7 +12,7 @@ const AboutPage = () => {
       </div>
       <div className='contact-container bg-black text-center text-white'>
         <h1>About Us</h1>
-        <p className='text-justify'>Mighty Plethora</p>
+        <h4 className='text-custom-gold'>Mighty Plethora</h4>
         <br />
         <h4>Your Trusted Partner in Event Excellence
         </h4>

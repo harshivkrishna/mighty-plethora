@@ -21,6 +21,15 @@ body{
     color: #cda45e;
 }
 
+.contact-container h4{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.contact-container p{
+    text-align: justify;
+}
+
 @media (max-width:550px) {
     .contact-container{
         padding: 20px;
