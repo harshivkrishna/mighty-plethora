@@ -11,10 +11,10 @@ const Category = () => {
                 <div className='category-inner-container'>
                     <div className='category-inner-left-container'>
                     <h1>Photography</h1>
-                        <p>Our photography services are designed to capture the essence of every moment, from the smallest details to the grandest scenes. We specialize in a variety of photography styles, including portraits, events, weddings, and lifestyle shoots, tailoring each session to your unique needs and vision. Using professional-grade equipment and a creative eye, we ensure every shot is perfectly framed and full of emotion. Whether you're celebrating a milestone or simply want to preserve cherished memories, our team is committed to providing you with stunning, high-quality images that you&apos;ll treasure for years to come.</p>
+                        <p className='text-justify'>Our photography services are designed to capture the essence of every moment, from the smallest details to the grandest scenes. We specialize in a variety of photography styles, including portraits, events, weddings, and lifestyle shoots, tailoring each session to your unique needs and vision. Using professional-grade equipment and a creative eye, we ensure every shot is perfectly framed and full of emotion. Whether you're celebrating a milestone or simply want to preserve cherished memories, our team is committed to providing you with stunning, high-quality images that you&apos;ll treasure for years to come.</p>
                     </div>
                     <div className='category-inner-right-container'>
-                        <img src="/assets/services/photo.jpg" alt="" />
+                        <img src="/assets/services/photo.jpg" className='rounded-md' alt="" />
                     </div>
                 </div>
 

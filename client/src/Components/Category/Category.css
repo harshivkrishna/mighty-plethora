@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 .category-container{
     display: flex;
     flex-direction: column;
@@ -7,7 +8,7 @@
 
 .category-container h1{
     font-size: 50px;
-    font-family: "Dancing Script",sans-serif;
+    font-family: "Montserrat",sans-serif;
     color: #cda45e;
     margin-left: 2%;
     margin-top: 2%;
@@ -28,6 +29,7 @@
 
 .category-inner-left-container p{
     line-height: 40px;
+    text-align: justify;
 
 }
 
@@ -41,6 +43,7 @@
     width: 100%;
     height: inherit;
     object-fit: contain;
+    border-radius: 10px;
 }
 
 @media (max-width:900px) {
