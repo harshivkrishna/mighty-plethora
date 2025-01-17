@@ -109,7 +109,7 @@ const Application = () => {
           ))}
         </div>
       ) : (
-        <p>No applications available.</p>
+        <p className='text-white'>No applications available.</p>
       )}
 
       {/* Pagination Controls */}
