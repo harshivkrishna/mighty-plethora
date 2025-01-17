@@ -168,6 +168,7 @@ const EventContactForm = () => {
               name="eventDate"
               className="form-control w-full px-4 py-2 border border-gray-300 rounded-md"
               value={formData.eventDate}
+              placeholder='Event Date'
               onChange={handleInputChange}
               required
             />
