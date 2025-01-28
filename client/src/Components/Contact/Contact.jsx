@@ -4,6 +4,7 @@ import emailjs from 'emailjs-com';
 import './Contact.css';
 import 'react-toastify'
 import { ToastContainer, toast } from 'react-toastify';
+import { use } from 'react';
 const EventContactForm = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -23,6 +24,7 @@ const EventContactForm = () => {
   });
 
   const [status, setStatus] = useState(''); 
+  const [info,setInfo] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -85,7 +87,7 @@ const EventContactForm = () => {
       <ToastContainer/>
       <div className="text-container heading-container relative">
         <span className="sub-title">GET IN TOUCH</span>
-        <h1 className="text-5xl text-white font-bold mt-2">Event Inquiry</h1>
+        <h1 className="text-5xl text-white font-bold mt-2">Enquire Us</h1>
       </div>
       <div className="container mx-auto px-4 py-12" data-aos="fade-up">
         <motion.div
@@ -179,7 +181,7 @@ const EventContactForm = () => {
               type="text"
               name="eventLocation"
               className="form-control w-full px-4 py-2 border border-gray-300 rounded-md"
-              placeholder="Event Location (Optional)"
+              placeholder="Venue (Optional)"
               value={formData.eventLocation}
               onChange={handleInputChange}
             />
@@ -312,7 +314,7 @@ const EventContactForm = () => {
             </div>
           </div>
 
-          <div className="form-group mt-3">
+          <div className="form-group mt-3 relative">
             <label className="block text-gray-500 font-medium">Attach Files (Optional)</label>
             <input
               type="file"
@@ -321,6 +323,8 @@ const EventContactForm = () => {
               multiple
               onChange={handleInputChange}
             />
+            <i className='bx bx-info-circle text-white absolute top-0 info-icon-file' onClick={()=>{setInfo(!info)}}></i>
+            {info ? <p className='info-para'>Write a detailed requirement if you have anything in specific</p> : ""}
           </div>
 
           <div className="my-3">

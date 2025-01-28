@@ -156,6 +156,22 @@ input[type='number'] {
     background: #d3af71;
   }
 
+  .info-icon-file{
+    left: 175px;
+    top: 4px;
+  }
+
+  .info-para{
+    position: absolute;
+    top: -30px;
+    left: 190px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 10px;
+  }
+
+
   @media (max-width:775px){
     .inner-container{
         flex-direction: column;
