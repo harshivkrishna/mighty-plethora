@@ -325,7 +325,7 @@ const EventContactForm = () => {
               onChange={handleInputChange}
             />
             <i className='bx bx-info-circle text-white absolute top-0 info-icon-file' onClick={()=>{setInfo(!info)}}></i>
-            {info ? <p className='info-para'>Write a detailed requirement if you have anything in specific</p> : ""}
+            {info ? <p className='info-para' onClick={()=>{setInfo(!info)}}>Write a detailed requirement if you have anything in specific</p> : ""}
           </div>
 
           <div className="my-3">
