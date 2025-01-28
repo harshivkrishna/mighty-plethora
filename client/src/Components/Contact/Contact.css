@@ -176,6 +176,11 @@ input[type='number'] {
     .inner-container{
         flex-direction: column;
     }
+    .contact-form-wrap{
+      flex-direction: column;
+      padding-left: 20px;
+      padding-right:20px;
+    }
   }
   
   @-webkit-keyframes animate-loading {

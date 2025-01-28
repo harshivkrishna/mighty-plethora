@@ -89,7 +89,8 @@ const EventContactForm = () => {
         <span className="sub-title">GET IN TOUCH</span>
         <h1 className="text-5xl text-white font-bold mt-2">Enquire Us</h1>
       </div>
-      <div className="container mx-auto px-4 py-12" data-aos="fade-up">
+      <div className='flex flex-row-reverse px-11 mt-4 contact-form-wrap'>
+      <div className="container mx-auto px-4 py-3" data-aos="fade-up">
         <motion.div
           className="mb-10"
           initial={{ opacity: 0 }}
@@ -265,23 +266,23 @@ const EventContactForm = () => {
                 <input
                   type="radio"
                   name="contactMethod"
-                  value="Email"
-                  checked={formData.contactMethod === 'Email'}
+                  value="Whatsapp"
+                  checked={formData.contactMethod === 'Whatsapp'}
                   onChange={handleInputChange}
                   className="mr-2"
                 />
-                Email
+                Whatsapp
               </label>
               <label className="flex items-center text-white">
                 <input
                   type="radio"
                   name="contactMethod"
-                  value="Phone"
-                  checked={formData.contactMethod === 'Phone'}
+                  value="Call"
+                  checked={formData.contactMethod === 'Call'}
                   onChange={handleInputChange}
                   className="mr-2"
                 />
-                Phone
+                Call
               </label>
             </div>
           </div>
@@ -342,6 +343,7 @@ const EventContactForm = () => {
             </button>
           </div>
         </form>
+      </div>
       </div>
     </section>
   );

@@ -145,7 +145,7 @@ const Footer = () => {
               >
                 <h3>Mighty Plethora Events</h3>
                 <p className="footer-address">
-                Head Office No. 72 Radha Avenue Sridevikuppam main road,  <br />
+                Head Office No. 72 Radha Avenue <br /> Sridevikuppam main road,  <br />
                 Valasaravakkam, Chennai, TamilNadu 600087<br />
                   <strong>Phone:</strong> +91 84282 01000<br />
                   <strong>Email:</strong> sample@gmail.com<br />

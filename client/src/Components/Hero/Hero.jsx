@@ -44,6 +44,30 @@ const Hero = () => {
       title: "Modern & Captivating Looks",
       subtitle: "Showcasing",
     },
+    {
+      id: 7,
+      image: "/assets/slider/img3.jpeg",
+      title: "Modern & Captivating Looks",
+      subtitle: "Showcasing",
+    },
+    {
+      id: 8,
+      image: "/assets/slider/img1.jpeg",
+      title: "Gorgeous & Eternal Beauty",
+      subtitle: "Featuring",
+    },
+    {
+      id: 9,
+      image: "/assets/slider/img2.jpeg",
+      title: "Elegant & Timeless Style",
+      subtitle: "Highlighting",
+    },
+    {
+      id: 10,
+      image: "/assets/slider/img3.jpeg",
+      title: "Modern & Captivating Looks",
+      subtitle: "Showcasing",
+    },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(1);
