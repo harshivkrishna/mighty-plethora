@@ -61,6 +61,7 @@ const Sidebar = ({delay}) => {
         <li><a href="/admin">Admin</a></li>
         <li><a href="/admin/jobs">Jobs</a></li>
         <li><a href="/admin/applications">Applications</a></li>
+        <li><a href="/admin/blogs">Blogs</a></li>
       </motion.ul>
 
       <div className="md:hidden">
@@ -91,6 +92,7 @@ const Sidebar = ({delay}) => {
         <li><a href="/admin">Admin</a></li>
         <li><a href="/admin/jobs">Jobs</a></li>
         <li><a href="/admin/applications">Applications</a></li>
+        <li><a href="/admin/blogs">Blogs</a></li>
         </motion.ul>
       )}
     </motion.nav>

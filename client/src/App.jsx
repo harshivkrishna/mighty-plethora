@@ -10,6 +10,8 @@ import JobApplication from './Pages/JobApplication/JobApplication';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'; // Import the ProtectedRoute component
 import AdminJobs from './Pages/AdminJobs/AdminJobs';
 import GalleryPage from './Pages/GalleryPage/GalleryPage';
+import BlogsPage from './Pages/BlogsPage/BlogsPage';
+import AdminBlog from './Pages/AdminBlogPage/AdminBlog';
 
 const App = () => {
   return (
@@ -20,6 +22,7 @@ const App = () => {
       <Route path='/careers' element={<Career />} />
       <Route path='/admin' element={<Admin/>}/>
       <Route path='/gallery' element={<GalleryPage/>}/>
+      <Route path='/blog' element={<BlogsPage/>}/>
       <Route
         path='/admin/jobs'
         element={
@@ -33,6 +36,14 @@ const App = () => {
         element={
           <ProtectedRoute>
             <JobApplication />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path='/admin/blogs'
+        element={
+          <ProtectedRoute>
+            <AdminBlog />
           </ProtectedRoute>
         }
       />
