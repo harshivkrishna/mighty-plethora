@@ -13,7 +13,7 @@ export default function AdminBlog() {
 
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get("https://mighty-plethora-api-zfw2.vercel.app//api/blogs");
+      const res = await axios.get("https://mighty-plethora-api-zfw2.vercel.app/api/blogs");
       setBlogs(res.data);
     } catch (err) {
       console.error("Error fetching blogs:", err);
