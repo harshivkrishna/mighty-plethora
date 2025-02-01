@@ -1,4 +1,28 @@
 .blogs-container{
     padding: 20px 40px;
     margin-top: 50px;
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: auto auto auto;
+    row-gap: 80px;
+
+}
+
+.blog-box{
+    width: 300px;
+}
+
+@media (max-width:1050px) {
+    .blogs-container{
+        grid-template-columns: auto auto;
+    row-gap: 50px;   
+    }
+}
+
+@media (max-width:750px) {
+    .blogs-container{
+        grid-template-columns: auto;
+    row-gap: 40px;   
+    justify-content: center;
+    }
 }

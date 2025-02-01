@@ -8,6 +8,7 @@ const BlogsPage = () => {
         <Navbar/>
         <div className='h-28'></div>
         <Blogs/>
+        
 
     </div>
   )

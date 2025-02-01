@@ -77,7 +77,7 @@ export default function AdminBlog() {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Manage Blogs</h1>
+      <h1 className="text-2xl font-bold text-white mb-4">Manage Blogs</h1>
       <form onSubmit={handleSubmit} className="mb-6 space-y-3">
         <input type="text" name="title" placeholder="Title" value={form.title} onChange={handleChange} required className="w-full p-2 border border-gray-300" />
         <textarea name="content" placeholder="Content" value={form.content} onChange={handleChange} required className="w-full p-2 border border-gray-300" />
@@ -89,8 +89,8 @@ export default function AdminBlog() {
         {blogs.map((blog) => (
           <div key={blog._id} className="border border-gray-300 p-4">
             {blog.coverImageUrl && <img src={blog.coverImageUrl} alt="Cover" className="w-full h-48 object-cover" />}
-            <h2 className="text-lg font-bold">{blog.title}</h2>
-            <p>{blog.content}</p>
+            <h2 className="text-lg text-white font-bold">{blog.title}</h2>
+            <p className="text-white">{blog.content}</p>
             <div className="mt-2 space-x-2">
               <button onClick={() => handleEdit(blog)} className="px-3 py-1 bg-orange-500 text-white">Edit</button>
               <button onClick={() => handleDelete(blog._id)} className="px-3 py-1 bg-red-500 text-white">Delete</button>
